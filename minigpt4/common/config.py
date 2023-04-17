@@ -29,6 +29,7 @@ class Config:
         runner_config = self.build_runner_config(config)
         model_config = self.build_model_config(config, **user_config)
         dataset_config = self.build_dataset_config(config)
+        bot_config = self.build_bot_config(config)
 
         # Validate the user-provided runner configuration
         # model and dataset configuration are supposed to be validated by the respective classes
@@ -37,7 +38,7 @@ class Config:
 
         # Override the default configuration with user options.
         self.config = OmegaConf.merge(
-            runner_config, model_config, dataset_config, user_config
+            runner_config, model_config, dataset_config, user_config, bot_config
         )
 
     def _validate_runner_config(self, runner_config):
@@ -79,6 +80,10 @@ class Config:
         )
 
         return model_config
+
+    @staticmethod
+    def build_bot_config(config):
+        return {"bot": config.bot}
 
     @staticmethod
     def build_runner_config(config):

@@ -1,0 +1,30 @@
+model:
+  arch: mini_gpt4
+  model_type: pretrain_vicuna
+  freeze_vit: True
+  freeze_qformer: True
+  max_txt_len: 160 # ?
+  end_sym: "###"
+  prompt_path: "prompts/alignment.txt"
+  prompt_template: '###Human: {} ###Assistant: '
+  llama_model: '/path/to/vicuna-13b-v0/'    # REPLACEME
+  ckpt: '/path/to/pretrained_minigpt4.pth'  # REPLACEME
+
+
+datasets:
+  cc_sbu_align:
+    vis_processor:
+      train:
+        name: "blip2_image_eval"
+        image_size: 224
+    text_processor:
+      train:
+        name: "blip_caption"
+
+run:
+  task: image_text_pretrain
+
+bot:
+  bot_token: # REPLACEME e.g. M.....
+  client_id: # REPLCAEME e.g. 10....
+  allowed_server_ids: # REPLACEME e.g. 10.....,10.....,10.....
