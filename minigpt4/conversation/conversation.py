@@ -151,7 +151,7 @@ class Chat:
             temperature=temperature,
         )
         output_token = outputs[0]
-        if output_token[0] == 0:
+        if output_token[0] == 0 or output_token[0] == 1:
             output_token = output_token[1:]
         output_text = self.model.llama_tokenizer.decode(output_token, add_special_tokens=False)
         output_text = output_text.split('###')[0]  # remove the stop sign '###'
