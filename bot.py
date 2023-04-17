@@ -77,7 +77,7 @@ def stateful_single_answer(image, message):
     assert llm_message == "Received."
     chat.ask(message, chat_state)
     #chatbot = chatbot + [[user_message, None]]
-    num_beams,temperature = 5,1.0
+    num_beams,temperature = 1,1.0
     llm_message = chat.answer(conv=chat_state, img_list=img_list, max_new_tokens=1000, num_beams=num_beams, temperature=temperature)[0]
     #chatbot[-1][1] = llm_message
     return llm_message
