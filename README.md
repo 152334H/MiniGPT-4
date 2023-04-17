@@ -21,7 +21,10 @@ This is a simple discord bot that uses [**MiniGPT-4**](https://github.com/Vision
 4. `python bot.py --cfg-path eval_configs/minigpt4_bot.yaml`
 5. Add the bot to servers with the oauth2 link that gets emitted from the script
 
-
+## TODO
+* reduce vram
+* conversations (in threads)
+* public bot (how to find compute???)
 
 # MiniGPT-4: Enhancing Vision-language Understanding with Advanced Large Language Models
 [Deyao Zhu](https://tsutikgiau.github.io/)* (On Job Market!), [Jun Chen](https://junchen14.github.io/)* (On Job Market!), [Xiaoqian Shen](https://xiaoqian-shen.github.io), Xiang Li, and Mohamed Elhoseiny. *Equal Contribution
