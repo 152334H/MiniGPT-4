@@ -1,3 +1,28 @@
+# MiniGPT-4 Discord Bot
+This is a simple discord bot that uses [**MiniGPT-4**](https://github.com/Vision-CAIR/MiniGPT-4) to run a **multimodal vicuna-13b** discord bot.
+
+![](example.png)
+
+## Installation
+0. Follow the [original installation instructions](https://github.com/Vision-CAIR/MiniGPT-4#installation) **on this repository** (some dependencies changed), and ensure that the base demo works.
+1. Create a new [Discord Application](https://discord.com/developers/applications/), and enable it as a bot with message intents access
+2. In `./eval_configs/minigpt4_bot.yaml`, replace the following entries with appropriate values from the Discord Application:
+    ```yaml
+    bot_token: # REPLACEME e.g. M.....
+    client_id: # REPLCAEME e.g. 10....
+    allowed_server_ids: # REPLACEME e.g. 10.....,10.....,10.....
+    ```
+    Note: `client_id` from the OAuth2 Application tab, `allowed_server_ids` as a comma-separated list of allowed discord server IDs
+3. Also replace the following entries in the same yaml file:
+    ```yaml
+    llama_model: '/path/to/vicuna-13b-v0/'    # REPLACEME
+    ckpt: '/path/to/pretrained_minigpt4.pth'  # REPLACEME
+    ```
+4. `python bot.py --cfg-path eval_configs/minigpt4_bot.yaml`
+5. Add the bot to servers with the oauth2 link that gets emitted from the script
+
+
+
 # MiniGPT-4: Enhancing Vision-language Understanding with Advanced Large Language Models
 [Deyao Zhu](https://tsutikgiau.github.io/)* (On Job Market!), [Jun Chen](https://junchen14.github.io/)* (On Job Market!), [Xiaoqian Shen](https://xiaoqian-shen.github.io), Xiang Li, and Mohamed Elhoseiny. *Equal Contribution
 
